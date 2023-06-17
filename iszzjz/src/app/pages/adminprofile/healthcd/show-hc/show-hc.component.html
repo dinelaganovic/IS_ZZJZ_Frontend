@@ -88,7 +88,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLabel">{{modalTitle}}</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="add-edit-modal-close"></button>
+        <button (click)="modalClose()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="add-edit-modal-close"></button>
       </div>
       <div class="modal-body">
         <app-add-edit-hce [hcemployee]="hcemployee" *ngIf="activateAddEditHCEComponent" ></app-add-edit-hce>
