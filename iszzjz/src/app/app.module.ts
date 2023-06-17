@@ -12,7 +12,7 @@ import { MenupageComponent } from './pages/menupage/menupage.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { LoginaComponent } from './pages/logina/logina.component';
 import { AdminrhomeComponent } from './pages/adminrprofile/adminrhome/adminrhome.component';
@@ -39,6 +39,7 @@ import { AuthService } from './services/auth.service';
 import { ServiceDetailsService } from './services/service-details.service';
 import { ApiService } from './services/api.service';
 import { hceApiService } from './services/hce-api.service';
+import { TokenInterceptor } from './interceptors/token.interceptor';
 
 
 @NgModule({
@@ -88,7 +89,12 @@ import { hceApiService } from './services/hce-api.service';
     AuthService,
     ServiceDetailsService,
     ApiService,
-    hceApiService
+    hceApiService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi:true
+    }
   ],
   bootstrap: [AppComponent]
 })

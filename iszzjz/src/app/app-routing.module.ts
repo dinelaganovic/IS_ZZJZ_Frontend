@@ -21,7 +21,6 @@ import { RequestspageComponent } from './pages/userprofile/requestspage/requests
 import { UserrequestsComponent } from './pages/adminrprofile/userrequests/userrequests.component';
 
 const routes: Routes = [
-  {path: '**', component: HomeComponent},
   {path:'',component:HomeComponent},
   {path:'menu',component:MenuComponent},
   {path:'menu/:id',component:MenupageComponent},
