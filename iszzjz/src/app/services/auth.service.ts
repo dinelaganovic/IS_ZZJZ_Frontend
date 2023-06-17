@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {JwtHelperService}from '@auth0/angular-jwt'
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
+  private userPayload:any;
   private baseUrl: string="https://localhost:7059/api/User/";
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.userPayload=this.decodedToken();
+  }
   login(loginObj:any){
     return this.http.post<any>(`${this.baseUrl}authenticate`, loginObj)
   }
@@ -29,5 +32,15 @@ export class AuthService {
   isLoggedIn():boolean{
     return  !!localStorage.getItem('token')
   }
-
+  decodedToken(){ ///funkcija koja salje podatke usera
+    const jwtHelper= new JwtHelperService();
+    const token= this.getToken()!;
+    console.log(jwtHelper.decodeToken(token))
+    return jwtHelper.decodeToken(token);
+  }
+  getfullNameFromToken(){
+  if(this.userPayload)
+  return this.userPayload.unique_name;
+  }
+  
 }
