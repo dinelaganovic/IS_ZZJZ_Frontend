@@ -40,7 +40,6 @@ import { ServiceDetailsService } from './services/service-details.service';
 import { ApiService } from './services/api.service';
 import { hceApiService } from './services/hce-api.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
-import { DaspanelComponent } from './sharepage/daspanel/daspanel.component';
 
 
 @NgModule({
@@ -74,7 +73,6 @@ import { DaspanelComponent } from './sharepage/daspanel/daspanel.component';
     UserrequestsComponent,
     ShowHcComponent,
     AddEditHceComponent,
-    DaspanelComponent
   
   ],
   imports: [
