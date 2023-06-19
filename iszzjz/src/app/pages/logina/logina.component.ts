@@ -8,6 +8,7 @@ import {
 import { Router } from '@angular/router';
 import { NgToastService } from 'ng-angular-popup';
 import { AuthService } from 'src/app/services/auth.service';
+import { UserstoreService } from 'src/app/services/userstore.service';
 
 @Component({
   selector: 'app-logina',
@@ -21,7 +22,8 @@ export class LoginaComponent  implements OnInit{
     private fb: FormBuilder, 
     private auth: AuthService,
     private toast: NgToastService,
-    private router: Router
+    private router: Router,
+    private store: UserstoreService
   ) {}
 
   ngOnInit(): void {
@@ -45,6 +47,9 @@ export class LoginaComponent  implements OnInit{
         console.log(res.message);
         this.loginForm.reset();
         this.auth.storeToken(res.token);
+        const tokenPayload= this.auth.decodedToken();
+        this.store.setUserInfoFromStore(tokenPayload.unique_name)
+        this.store.setRoleFromStore(tokenPayload.role)
         this.toast.success({detail: "Uspešno", summary: res.message, duration:5000}); //5000milisekundi
         this.router.navigate(['adminrhome']);
       },
