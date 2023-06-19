@@ -1,7 +1,8 @@
 import { animate, keyframes, style, transition, trigger } from '@angular/animations';
 import { Component, Output, EventEmitter, OnInit, HostListener } from '@angular/core';
 import { navbarData } from './navlink';
-
+import { AuthService } from 'src/app/services/auth.service';
+import { UserstoreService } from 'src/app/services/userstore.service';
 interface sidenavtoggle {
   screenWidth: number;
   collapsed: boolean;
@@ -42,7 +43,10 @@ export class DashnavaComponent implements OnInit {
   collapsed = false;
   screenWidth = 0;
   navData = navbarData;
-
+  public userinfo:string[]=[];
+  constructor( private auth: AuthService, private store: UserstoreService){
+  
+  }
   @HostListener('window:resize', ['$event'])
   onResize(event: any) {
     this.screenWidth = window.innerWidth;
@@ -54,6 +58,11 @@ export class DashnavaComponent implements OnInit {
 
   ngOnInit(): void {
       this.screenWidth = window.innerWidth;
+      this.store.getUserInfoFromStore()
+      .subscribe(val =>{
+       let infU:[] =this.auth.getArrayUFromToken();
+       this.userinfo= infU;
+      })
   }
 
   toggleCollapse(): void {

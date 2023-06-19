@@ -51,7 +51,7 @@ export class LoginaComponent  implements OnInit{
         this.store.setUserInfoFromStore(tokenPayload.unique_name)
         this.store.setRoleFromStore(tokenPayload.role)
         this.toast.success({detail: "Uspešno", summary: res.message, duration:5000}); //5000milisekundi
-        this.router.navigate(['adminrhome']);
+        this.router.navigate(['adminrhome/userrequests']);
       },
       error:(err)=>{
         this.toast.error({detail: "Neuspešno", summary:"Nešto nije u redu!Proverite podatke!", duration:5000})
