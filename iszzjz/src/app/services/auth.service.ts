@@ -38,9 +38,14 @@ export class AuthService {
     console.log(jwtHelper.decodeToken(token))
     return jwtHelper.decodeToken(token);
   }
-  getfullNameFromToken(){
-  if(this.userPayload)
-  return this.userPayload.unique_name;
+  getArrayUFromToken(){
+    if(this.userPayload)
+    return this.userPayload.unique_name;
   }
+  getRoleFromToken(){
+    if(this.userPayload)
+    return this.userPayload.role;
+  }
+  
   
 }

@@ -9,19 +9,27 @@ import { UserstoreService } from 'src/app/services/userstore.service';
   styleUrls: ['./userpanel.component.css']
 })
 export class UserpanelComponent implements OnInit {
-  public fullName:string="";
+  public role:string="";
+  public userinfo:string[]=[];
+
   @Input() collapsed = false;
   @Input() screenWidth = 0;
 constructor(private store: UserstoreService, private auth: AuthService){
 
 }
 ngOnInit(): void {
-  this.store.getfullNameFromStore()
+  
+  this.store.getRoleFromStore()
   .subscribe(val=>{
-    let fullNameFromToken= this.auth.getfullNameFromToken();
-    this.fullName=val|| fullNameFromToken;
+    let roleFromToken= this.auth.getRoleFromToken();
+    this.role=val|| roleFromToken;
   })
- 
+  
+ this.store.getUserInfoFromStore()
+ .subscribe(val =>{
+  let infU:[] =this.auth.getArrayUFromToken();
+  this.userinfo= infU;
+ })
 }
   getBodyClass(): string {
     let styleClass = '';
