@@ -1,2 +1,5 @@
-<app-dashnavbar (onToggleSideNav)="onToggleSideNav($event)"></app-dashnavbar>
-<app-adminpanel [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-adminpanel>
+<ng-container  *ngIf="role==='admin'">
+    <app-dashnavbar (onToggleSideNav)="onToggleSideNav($event)"></app-dashnavbar>
+    <app-adminpanel [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-adminpanel>
+</ng-container>
+

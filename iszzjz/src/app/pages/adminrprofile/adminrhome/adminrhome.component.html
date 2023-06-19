@@ -1,2 +1,5 @@
-<app-dashnava (onToggleSideNav)="onToggleSideNav($event)"></app-dashnava>
-<app-adminrpanel [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-adminrpanel>
+
+<ng-container  *ngIf="role==='aradnik'">
+    <app-dashnava (onToggleSideNav)="onToggleSideNav($event)"></app-dashnava>
+    <app-adminrpanel [collapsed]="isSideNavCollapsed" [screenWidth]="screenWidth"></app-adminrpanel>
+</ng-container>
