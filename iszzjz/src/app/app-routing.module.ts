@@ -19,6 +19,7 @@ import { HealthcdComponent } from './pages/adminprofile/healthcd/healthcd.compon
 import { AdministrativeworkersComponent } from './pages/adminprofile/administrativeworkers/administrativeworkers.component';
 import { RequestspageComponent } from './pages/userprofile/requestspage/requestspage.component';
 import { UserrequestsComponent } from './pages/adminrprofile/userrequests/userrequests.component';
+import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcards.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -32,6 +33,7 @@ const routes: Routes = [
   {path:'loginadmin', component: LoginadminComponent},
   {path:'adminrhome',component: AdminrhomeComponent,canActivate: [AuthGuard],children:[
     {path:'userrequests',component: UserrequestsComponent},
+    {path: 'healthcards', component: HealthcardsComponent}
   ]},
   {path:'adminhome',component: AdminhomeComponent,canActivate: [AuthGuard], children:[
     { path:'registeruser', component: RegisteruserComponent },
