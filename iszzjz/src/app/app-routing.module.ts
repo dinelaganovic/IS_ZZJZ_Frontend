@@ -33,7 +33,7 @@ const routes: Routes = [
   {path:'loginadmin', component: LoginadminComponent},
   {path:'adminrhome',component: AdminrhomeComponent,canActivate: [AuthGuard],children:[
     {path:'userrequests',component: UserrequestsComponent},
-    {path: 'healthcards', component: HealthcardsComponent}
+   
   ]},
   {path:'adminhome',component: AdminhomeComponent,canActivate: [AuthGuard], children:[
     { path:'registeruser', component: RegisteruserComponent },
@@ -43,6 +43,7 @@ const routes: Routes = [
   ]},
   {path:'userprofile', component: UserhomeComponent,canActivate: [AuthGuard], children:[
     { path:'requestspage', component: RequestspageComponent },
+    {path: 'healthcards', component: HealthcardsComponent}
 
   ]
 }
