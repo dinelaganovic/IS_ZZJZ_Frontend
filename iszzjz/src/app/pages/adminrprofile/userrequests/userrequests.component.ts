@@ -9,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class UserrequestsComponent implements OnInit {
 public users: any=[];
-constructor( private api: ApiService, private auth:AuthService){}
+constructor( private api: ApiService){}
 ngOnInit(): void {
   this.api.getUsers()
   .subscribe(res=>
