@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgToastService } from 'ng-angular-popup';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserstoreService } from 'src/app/services/userstore.service';
@@ -11,7 +12,7 @@ import { UserstoreService } from 'src/app/services/userstore.service';
 export class HealthcardsComponent implements OnInit{
   public cardsinfo: any=[];
   public userinfo:any=[];
-constructor(private api: ApiService, private auth: AuthService, private store:UserstoreService ){
+constructor(private api: ApiService, private auth: AuthService, private store:UserstoreService, private toast: NgToastService ){
 }
 ngOnInit(): void {
   this.store.getUserInfoFromStore()
@@ -20,10 +21,15 @@ ngOnInit(): void {
    this.userinfo= infU;
   })
   this.api.getCardsInfo(this.userinfo[0])
-  .subscribe(res=>
+  .subscribe(
     {
+      next:(res)=>{
       this.cardsinfo=res;
-    })
+    },
+    error:(err)=>{
+      this.toast.error({detail: "Predajte zahtev!", summary:"Nemate aktiviranu zdravstvenu knjižicu!", duration:5000})
+      this.cardsinfo=null
+    }})
  
 }
 }
