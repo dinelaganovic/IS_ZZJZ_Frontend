@@ -15,7 +15,5 @@ export class ApiService {
   }
   getCardsInfo(id:number){
     return this.http.get<any[]>(this.baseUrl1+`${id}`)
-  }
-
-  
+  } 
 }

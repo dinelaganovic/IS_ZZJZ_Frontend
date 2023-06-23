@@ -25,6 +25,7 @@ ngOnInit(): void {
     {
       next:(res)=>{
       this.cardsinfo=res;
+      console.log(this.cardsinfo)
     },
     error:(err)=>{
       this.toast.error({detail: "Predajte zahtev!", summary:"Nemate aktiviranu zdravstvenu knjižicu!", duration:5000})

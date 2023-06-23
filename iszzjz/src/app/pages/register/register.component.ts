@@ -74,7 +74,8 @@ export class RegisterComponent implements OnInit{
   }
   
   register() {
-    this.auth.signUp(this.registerForm.value)
+    if(this.registerForm.valid && !this.invaildRPWD()){
+     this.auth.signUp(this.registerForm.value)
     .subscribe({
       next:(res)=>{
         //alert(res.message);
@@ -86,7 +87,9 @@ export class RegisterComponent implements OnInit{
         //alert(err.message)
         this.toast.error({detail: "Neuspešno", summary:"Nešto nije u redu!Proverite podatke!", duration:5000})
       }
-    })    
+    }) } else{
+
+    }  
   }
 
   //#region Getters
