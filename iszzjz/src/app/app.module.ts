@@ -26,7 +26,6 @@ import { RegisteruserComponent } from './pages/adminprofile/registeruser/registe
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { AdminpanelComponent } from './pages/adminprofile/adminpanel/adminpanel.component';
 import { HealthcdComponent } from './pages/adminprofile/healthcd/healthcd.component';
-import { AdministrativeworkersComponent } from './pages/adminprofile/administrativeworkers/administrativeworkers.component';
 import { DashnavuComponent } from './pages/userprofile/dashnavu/dashnavu.component';
 import { UserpanelComponent } from './pages/userprofile/userpanel/userpanel.component';
 import { RequestspageComponent } from './pages/userprofile/requestspage/requestspage.component';
@@ -42,6 +41,7 @@ import { hceApiService } from './services/hce-api.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcards.component';
 import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
+import { AddAworkerComponent } from './pages/adminprofile/adminisworker/add-aworker/add-aworker.component';
 
 
 @NgModule({
@@ -66,7 +66,6 @@ import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/admin
     RegisteruserComponent,
     AdminpanelComponent,
     HealthcdComponent,
-    AdministrativeworkersComponent,
     DashnavuComponent,
     UserpanelComponent,
     RequestspageComponent,
@@ -77,6 +76,7 @@ import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/admin
     AddEditHceComponent,
     HealthcardsComponent,
     AdminisworkerComponent,
+    AddAworkerComponent
   
   ],
   imports: [

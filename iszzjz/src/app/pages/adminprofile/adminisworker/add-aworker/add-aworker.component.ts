@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HceApiService } from '../../hce-api.service';
 import { Input } from '@angular/core';
+import { hceApiService } from 'src/app/services/hce-api.service';
 
 @Component({
   selector: 'app-add-aworker',
@@ -12,7 +12,7 @@ export class AddAworkerComponent {
 
   aworkerList$!: Observable<any[]>;
 
-  constructor(private service:HceApiService) { }
+  constructor(private service:hceApiService) { }
 
   @Input() aworker:any;
   id: number = 0;

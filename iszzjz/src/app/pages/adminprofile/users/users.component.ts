@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HceApiService } from '../hce-api.service';
+import { hceApiService } from 'src/app/services/hce-api.service';
 
 @Component({
   selector: 'app-users',
@@ -12,7 +12,7 @@ export class UsersComponent {
   usersList$!:Observable<any[]>;
   hceList:any=[];
 
-  constructor(private service:HceApiService) { }
+  constructor(private service:hceApiService) { }
 
   ngOnInit(): void {
     this.usersList$= this.service.getUserList();

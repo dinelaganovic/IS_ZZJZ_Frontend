@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { HceApiService } from '../hce-api.service';
 import { Observable } from 'rxjs';
 import { Input } from '@angular/core';
+import { hceApiService } from 'src/app/services/hce-api.service';
 @Component({
   selector: 'app-registeruser',
   templateUrl: './registeruser.component.html',
@@ -11,7 +11,7 @@ export class RegisteruserComponent {
 
   usersList$!:Observable<any[]>;
 
-  constructor(private service:HceApiService) { }
+  constructor(private service:hceApiService) { }
 
   @Input() user:any;
   id: number = 0;

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HceApiService } from '../hce-api.service';
+import { hceApiService } from 'src/app/services/hce-api.service';
+
 
 @Component({
   selector: 'app-adminisworker',
@@ -13,7 +14,7 @@ export class AdminisworkerComponent {
   activateAddAWComp:boolean = false;
   aworker:any;
 
-  constructor(private service:HceApiService) { }
+  constructor(private service:hceApiService) { }
 
   ngOnInit(): void {
     this.aworkerList$= this.service.getAdminworkerList();
