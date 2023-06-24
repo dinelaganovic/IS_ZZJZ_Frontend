@@ -41,6 +41,7 @@ import { ApiService } from './services/api.service';
 import { hceApiService } from './services/hce-api.service';
 import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcards.component';
+import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcard
     ShowHcComponent,
     AddEditHceComponent,
     HealthcardsComponent,
+    AdminisworkerComponent,
   
   ],
   imports: [

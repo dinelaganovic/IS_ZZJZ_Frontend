@@ -16,10 +16,10 @@ import { LoginadminComponent } from './pages/loginadmin/loginadmin.component';
 import { RegisteruserComponent } from './pages/adminprofile/registeruser/registeruser.component';
 import { UsersComponent } from './pages/adminprofile/users/users.component';
 import { HealthcdComponent } from './pages/adminprofile/healthcd/healthcd.component';
-import { AdministrativeworkersComponent } from './pages/adminprofile/administrativeworkers/administrativeworkers.component';
 import { RequestspageComponent } from './pages/userprofile/requestspage/requestspage.component';
 import { UserrequestsComponent } from './pages/adminrprofile/userrequests/userrequests.component';
 import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcards.component';
+import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -39,7 +39,7 @@ const routes: Routes = [
     { path:'registeruser', component: RegisteruserComponent },
     { path:'users', component: UsersComponent },
     { path:'healthcd', component: HealthcdComponent },
-    { path:'administrativeworkers', component: AdministrativeworkersComponent }
+    { path:'adminisworker', component: AdminisworkerComponent }
   ]},
   {path:'userprofile', component: UserhomeComponent,canActivate: [AuthGuard], children:[
     { path:'requestspage', component: RequestspageComponent },

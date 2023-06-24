@@ -10,7 +10,7 @@ export const navbarData = [
         label: 'Korisnici aplikacije'
     },
     {
-        routeLink: 'administrativeworkers',
+        routeLink: 'adminisworker',
         icon: 'bi bi-person-workspace',
         label: 'Administrativni radnici'
     },
