@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { UserstoreService } from 'src/app/services/userstore.service';
@@ -11,7 +12,13 @@ import { UserstoreService } from 'src/app/services/userstore.service';
 export class RequestspageComponent implements OnInit{
   public cardsinfo: any=[];
   public userinfo:any=[];
-constructor(private api: ApiService, private auth: AuthService, private store:UserstoreService ){
+  requestForm: FormGroup;
+  rtypes = [
+    { id: 1, name: "Zahtev za kreiranje zdravstvene knjižice" },
+    { id: 2, name: "Zahtev za overu zdravstvene knjižice" },
+    { id: 3, name: "Zahtev za overu uputa lečenja" }
+  ];
+constructor(private api: ApiService, private auth: AuthService, private store:UserstoreService, private fb: FormBuilder ){
 }
 ngOnInit(): void {
   this.store.getUserInfoFromStore()
@@ -23,8 +30,14 @@ ngOnInit(): void {
   .subscribe(res=>
     {
       this.cardsinfo=res;
-      console.log(this.cardsinfo);
     })
- 
+
+    this.requestForm = this.fb.group({
+      requesttype: [null]
+    });
+}
+submit(){
+  console.log("Form Submitted")
+    console.log(this.requestForm.value)
 }
 }

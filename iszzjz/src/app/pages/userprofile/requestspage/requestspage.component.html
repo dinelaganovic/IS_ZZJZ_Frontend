@@ -1,3 +1,22 @@
-
-
+<div class="card text-center mb-3" style="margin-top: 5%; background-color: rgb(232, 229, 229);">
+    <div class="card-body">
+      <br>
+      <h5 class="card-title">PREDAJTE ZAHTEV (POPUNITE SVA POLJA)</h5>
+      <br>
+      <form [formGroup]="requestForm" (ngSubmit)="submit()">
+        <p class="card-text">Dostupni zahtevi za predaju:</p>
+        <select formControlName="requesttype" style="width: 300px;">
+          <option [ngValue]="null" disabled>Tip vašeg zahteva</option>
+          <option *ngFor="let rt of  rtypes" [ngValue]="rt.id">{{rt.name}}</option>
+        </select>
+        <br>
+        <br>
+        <input type="file" alt="priloži fajl">
+        <br>
+        <p class="card-text">Obavezno priložiti potreban dokument!</p>
+        <br>
+        <button  class="btn btn-dark" type="submit">Predaj zahtev</button>
+      </form>
+    </div>
+</div>
 
