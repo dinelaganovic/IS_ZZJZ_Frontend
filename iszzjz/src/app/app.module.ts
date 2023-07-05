@@ -42,6 +42,7 @@ import { TokenInterceptor } from './interceptors/token.interceptor';
 import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcards.component';
 import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
 import { AddAworkerComponent } from './pages/adminprofile/adminisworker/add-aworker/add-aworker.component';
+import { UploadComponent } from './pages/userprofile/upload/upload.component';
 
 
 @NgModule({
@@ -76,7 +77,8 @@ import { AddAworkerComponent } from './pages/adminprofile/adminisworker/add-awor
     AddEditHceComponent,
     HealthcardsComponent,
     AdminisworkerComponent,
-    AddAworkerComponent
+    AddAworkerComponent,
+    UploadComponent
   
   ],
   imports: [

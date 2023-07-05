@@ -8,6 +8,7 @@ import { Observable, catchError } from 'rxjs';
 export class ApiService {
   private baseUrl: string="https://localhost:7059/api/User/";
   private baseUrl1: string="https://localhost:7059/api/Cards/";
+  private baseUrl2: string="https://localhost:7059/api/Upload/";
   constructor(private http: HttpClient) { }
 
   getUsers(){
@@ -16,4 +17,11 @@ export class ApiService {
   getCardsInfo(id:number){
     return this.http.get<any[]>(this.baseUrl1+`${id}`)
   } 
+
+  getRTypes(){
+    return this.http.get<any>(this.baseUrl2);
+  }
+  SaveR(userObj: any){
+      return this.http.post<any>(`${this.baseUrl2}request`, userObj)
+  }
 }
