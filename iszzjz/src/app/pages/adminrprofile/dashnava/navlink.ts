@@ -1,22 +1,17 @@
 export const navbarData = [
     {
         routeLink: 'userrequests',
-        icon: 'bi bi-person-plus-fill',
-        label: 'Pristigli zahtevi'
+        icon: 'bi bi-credit-card',
+        label: 'Izdavanje nove zdravstvene knjizice'
     },
     {
         routeLink: 'users',
-        icon: 'bi bi-people',
-        label: 'Korisnici aplikacije'
+        icon: 'bi bi-card-heading',
+        label: 'Overa uputa za lecenje'
     },
     {
         routeLink: 'administrativeworkers',
-        icon: 'bi bi-person-workspace',
-        label: 'Administrativni radnici'
-    },
-    {
-        routeLink: 'healthcd',
-        icon: 'bi bi-building-gear',
-        label: 'Zdravstveni centri'
+        icon: 'bi bi-card-checklist',
+        label: 'Overa postojece zdravstvene knjizice'
     },
 ];
