@@ -9,6 +9,8 @@ export class ApiService {
   private baseUrl: string="https://localhost:7059/api/User/";
   private baseUrl1: string="https://localhost:7059/api/Cards/";
   private baseUrl2: string="https://localhost:7059/api/Upload/";
+  private baseUrl3: string="https://localhost:7059/api/Requests";
+
   constructor(private http: HttpClient) { }
 
   getUsers(){
@@ -23,5 +25,8 @@ export class ApiService {
   }
   SaveR(userObj: any){
       return this.http.post<any>(`${this.baseUrl2}request`, userObj)
+  }
+  getReguests(){
+    return this.http.get<any>(this.baseUrl3);
   }
 }
