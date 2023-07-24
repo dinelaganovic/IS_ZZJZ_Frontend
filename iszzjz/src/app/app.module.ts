@@ -43,6 +43,8 @@ import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcard
 import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
 import { AddAworkerComponent } from './pages/adminprofile/adminisworker/add-aworker/add-aworker.component';
 import { UploadComponent } from './pages/userprofile/upload/upload.component';
+import { VerificationinstrComponent } from './pages/adminrprofile/verificationinstr/verificationinstr.component';
+import { VerificationhcardsComponent } from './pages/adminrprofile/verificationhcards/verificationhcards.component';
 
 
 @NgModule({
@@ -78,7 +80,9 @@ import { UploadComponent } from './pages/userprofile/upload/upload.component';
     HealthcardsComponent,
     AdminisworkerComponent,
     AddAworkerComponent,
-    UploadComponent
+    UploadComponent,
+    VerificationinstrComponent,
+    VerificationhcardsComponent
   
   ],
   imports: [
