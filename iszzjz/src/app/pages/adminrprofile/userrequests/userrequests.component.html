@@ -1,4 +1,18 @@
-<p>USERS</p>
-<ul *ngFor="let user of users">
-    <li>{{user.email}}</li>
-</ul>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">DOCUMENT</th>
+        <th scope="col">ID</th>
+        <th scope="col">USERID</th>
+        <th scope="col">TYPEID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let req of requests">
+        <td><img [src]="createImgPath(req.document)" alt="profile picture" style="width:100px; height:80px;"></td>
+        <td>{{req.id}}</td>
+        <td>{{req.userid}}</td>
+        <td>{{req.type_id}}</td>
+      </tr>
+    </tbody>
+  </table>

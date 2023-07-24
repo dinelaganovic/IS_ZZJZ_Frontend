@@ -8,13 +8,16 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./userrequests.component.css']
 })
 export class UserrequestsComponent implements OnInit {
-public users: any=[];
+public requests: any=[];
 constructor( private api: ApiService){}
 ngOnInit(): void {
-  this.api.getUsers()
+  this.api.getReguests()
   .subscribe(res=>
     {
-      this.users=res;
+      this.requests=res;
     })
+}
+public createImgPath = (serverPath: string) => { 
+  return `https://localhost:7059/${serverPath}`; 
 }
 }
