@@ -20,6 +20,8 @@ import { RequestspageComponent } from './pages/userprofile/requestspage/requests
 import { UserrequestsComponent } from './pages/adminrprofile/userrequests/userrequests.component';
 import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcards.component';
 import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
+import { VerificationhcardsComponent } from './pages/adminrprofile/verificationhcards/verificationhcards.component';
+import { VerificationinstrComponent } from './pages/adminrprofile/verificationinstr/verificationinstr.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -33,7 +35,8 @@ const routes: Routes = [
   {path:'loginadmin', component: LoginadminComponent},
   {path:'adminrhome',component: AdminrhomeComponent,canActivate: [AuthGuard],children:[
     {path:'userrequests',component: UserrequestsComponent},
-   
+    {path:'verificationinstr',component:VerificationinstrComponent},
+    {path:'verificationhcards',component:VerificationhcardsComponent}
   ]},
   {path:'adminhome',component: AdminhomeComponent,canActivate: [AuthGuard], children:[
     { path:'registeruser', component: RegisteruserComponent },
