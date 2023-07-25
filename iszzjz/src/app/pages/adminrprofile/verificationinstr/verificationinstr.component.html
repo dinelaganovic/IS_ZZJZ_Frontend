@@ -1,1 +1,14 @@
-<p>verificationinstr works!</p>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">DOCUMENT</th>
+        <th scope="col">USERID</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let req of requests">
+      <tr *ngIf="req.type_id=='4'">
+        <td><img [src]="createImgPath(req.document)" alt="profile picture" style="width:100px; height:80px;"></td>
+        <td>{{req.userid}}</td>
+      </tr>
+    </tbody>
+  </table>
