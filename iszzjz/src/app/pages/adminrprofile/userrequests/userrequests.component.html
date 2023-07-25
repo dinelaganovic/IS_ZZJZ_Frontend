@@ -1,16 +1,32 @@
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">DOCUMENT</th>
-        <th scope="col">USERID</th>
-        <th>Polje A.Radnika</th>
-      </tr>
-    </thead>
-    <tbody *ngFor="let req of requests">
-      <tr *ngIf="req.type_id=='3'">
-        <td><img [src]="createImgPath(req.document)" alt="profile picture" style="width:100px; height:80px;"></td>
-        <td>{{req.userid}}</td>
-        <td><button class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button></td>
-      </tr>
-    </tbody>
-  </table>
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zdravstveni knjizica</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>LBO</p>
+        <input type="text" name="" id="">
+        <br>
+        <p>Datum isteka</p>
+        <input type="date" value="17.07.2023">
+        <br>
+        <p>Datum Overe zdravstvene knjizice</p>
+        <input type="date">
+        <br>
+        <br><button data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-outline-primary me-2 mb-1">Izdaj novu zdravstvenu knjizicu</button>
+      </div>    
+    </div>
+  </div>
+</div>
+<div *ngFor="let req of requests">
+<div  style="width: 400px;height: 300px;" *ngIf="req.type_id=='3'"  class="card" style="width: 18rem;">
+  <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
+  <div class="card-body">
+    <h5 class="card-title">Document</h5>
+    <p class="card-text">{{req.userid}}</p>
+    <button data-bs-toggle="modal" data-bs-target="#myModal"  class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button>
+  </div>
+</div>
+</div>
