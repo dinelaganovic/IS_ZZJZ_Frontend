@@ -3,12 +3,14 @@
       <tr>
         <th scope="col">DOCUMENT</th>
         <th scope="col">USERID</th>
+        <th>Polje A.Radnika</th>
       </tr>
     </thead>
     <tbody *ngFor="let req of requests">
       <tr *ngIf="req.type_id=='3'">
         <td><img [src]="createImgPath(req.document)" alt="profile picture" style="width:100px; height:80px;"></td>
         <td>{{req.userid}}</td>
+        <td><button class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button></td>
       </tr>
     </tbody>
   </table>

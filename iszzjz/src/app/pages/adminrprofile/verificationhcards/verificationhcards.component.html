@@ -1,14 +1,32 @@
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zdravstveni knjizica</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Datum isteka</p>
+        <input type="text" value="17.07.2023">
+        <p>Datum Overe zdravstvene knjizice</p>
+        <input type="date">
+      </div>    
+    </div>
+  </div>
+</div>
 <table class="table table-striped">
     <thead>
       <tr>
         <th scope="col">DOCUMENT</th>
         <th scope="col">USERID</th>
+        <th>Polje A.Radnika</th>
       </tr>
     </thead>
     <tbody *ngFor="let req of requests">
       <tr *ngIf="req.type_id=='1'">
         <td><img [src]="createImgPath(req.document)" alt="profile picture" style="width:100px; height:80px;"></td>
         <td>{{req.userid}}</td>
+        <td><button data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-outline-primary me-2 mb-1">Overi zdravstvenu knjizicu</button></td>
       </tr>
     </tbody>
   </table>
