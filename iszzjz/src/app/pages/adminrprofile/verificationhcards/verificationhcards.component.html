@@ -16,7 +16,7 @@
   </div>
 </div>
 <div class="container" *ngFor="let req of requests">
-  <div *ngIf="req.type_id=='1'"  class="card" style="width: 60rem;">
+  <div *ngIf="req.type_id=='1'"  class="card" style="width: 60rem; margin-bottom: 2rem;">
     <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
     <div class="card-body">
       <h5 class="card-title">Document</h5>
