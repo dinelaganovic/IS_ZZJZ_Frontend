@@ -21,7 +21,7 @@
   </div>
 </div>
 <div *ngFor="let req of requests">
-<div  style="width: 400px;height: 300px;" *ngIf="req.type_id=='3'"  class="card" style="width: 18rem;">
+<div *ngIf="req.type_id=='3'"  class="card" style="width: 60rem;">
   <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
   <div class="card-body">
     <h5 class="card-title">Document</h5>
