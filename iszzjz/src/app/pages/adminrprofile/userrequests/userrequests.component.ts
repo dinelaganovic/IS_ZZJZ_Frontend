@@ -12,6 +12,7 @@ export class UserrequestsComponent implements OnInit {
   
 public requests: any=[];
 usersList$!:Observable<any[]>;
+activateSave:boolean = false;
 
 constructor( private api: ApiService){}
 ngOnInit(): void {
@@ -25,5 +26,11 @@ ngOnInit(): void {
 }
 public createImgPath = (serverPath: string) => { 
   return `https://localhost:7059/${serverPath}`; 
+}
+
+modalSave(item:any) {
+  this.requests = item;
+  this.activateSave=true;
+
 }
 }

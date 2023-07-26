@@ -1,21 +1,25 @@
+<br><br>
+<div class="alert alert-success" role="alert" id="add-success-alert">
+  Zdravstvena knjizica je uspesno kreirana!
+</div>
+
+<div class="alert alert-success" role="alert" id="update-success-alert">
+    Zdravstveni centar uspesno zamenjen!
+</div>
+
+<div class="alert alert-success" role="alert" id="delete-success-alert">
+    Zdravstveni centar uspesno obrisat!
+</div>
+
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Zdravstveni knjizica</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Zdravstvena knjizica</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <p>LBO</p>
-        <input type="text" name="" id="">
-        <br>
-        <p>Datum isteka</p>
-        <input type="date" value="17.07.2023">
-        <br>
-        <p>Datum Overe zdravstvene knjizice</p>
-        <input type="date">
-        <br>
-        <br><button data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-outline-primary me-2 mb-1">Izdaj novu zdravstvenu knjizicu</button>
+        <app-addhcards  *ngIf="activateSave"></app-addhcards>
       </div>    
     </div>
   </div>
@@ -28,7 +32,7 @@
     <div *ngFor="let ur of usersList$|async" style="margin-bottom: 10px;">
     <p *ngIf="req.userid==ur.id" class="card-text">{{ur.firstName}} {{ur.lastName}}</p>
     </div>
-    <button data-bs-toggle="modal" data-bs-target="#myModal"  class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button>
+    <button (click)="modalSave(req)" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button>
   </div>
 </div>
 </div>
