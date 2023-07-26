@@ -13,6 +13,7 @@ export class UserrequestsComponent implements OnInit {
 public requests: any=[];
 usersList$!:Observable<any[]>;
 activateSave:boolean = false;
+request: any=[];
 
 constructor( private api: ApiService){}
 ngOnInit(): void {
@@ -29,7 +30,7 @@ public createImgPath = (serverPath: string) => {
 }
 
 modalSave(item:any) {
-  this.requests = item;
+  this.request = item;
   this.activateSave=true;
 
 }

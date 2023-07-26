@@ -11,19 +11,6 @@
     Zdravstveni centar uspesno obrisat!
 </div>
 
-<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Zdravstvena knjizica</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <app-addhcards  *ngIf="activateSave"></app-addhcards>
-      </div>    
-    </div>
-  </div>
-</div>
 <div *ngFor="let req of requests">
 <div *ngIf="req.type_id=='3'"  class="card" style="width: 60rem;margin-bottom: 2rem;">
   <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
@@ -35,4 +22,17 @@
     <button (click)="modalSave(req)" data-bs-toggle="modal" data-bs-target="#myModal" class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button>
   </div>
 </div>
+</div>
+<div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Zdravstvena knjizica</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <app-addhcards [requests]="request"  *ngIf="activateSave"></app-addhcards>
+      </div>    
+    </div>
+  </div>
 </div>
