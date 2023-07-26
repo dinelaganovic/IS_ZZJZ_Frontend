@@ -25,7 +25,9 @@
   <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
   <div class="card-body">
     <h5 class="card-title">Document</h5>
-    <p class="card-text">{{req.userid}}</p>
+    <div *ngFor="let ur of usersList$|async" style="margin-bottom: 10px;">
+    <p *ngIf="req.userid==ur.id" class="card-text">{{ur.firstName}} {{ur.lastName}}</p>
+    </div>
     <button data-bs-toggle="modal" data-bs-target="#myModal"  class="btn btn-outline-primary me-2 mb-1">Kreiraj novu zdravstvenu knjizicu</button>
   </div>
 </div>

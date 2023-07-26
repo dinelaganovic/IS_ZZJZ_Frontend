@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 @Component({
@@ -8,8 +9,14 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class VerificationhcardsComponent implements OnInit{
   public requests: any=[];
+
+  usersList$!:Observable<any[]>;
+  
   constructor( private api: ApiService){}
+
   ngOnInit(): void {
+    this.usersList$= this.api.getUserList();
+
     this.api.getReguests()
     .subscribe(res=>
       {

@@ -10,12 +10,19 @@ export class ApiService {
   private baseUrl1: string="https://localhost:7059/api/Cards/";
   private baseUrl2: string="https://localhost:7059/api/Upload/";
   private baseUrl3: string="https://localhost:7059/api/Requests";
+  readonly usersAPIUrl="https://localhost:7059/api";
+
 
   constructor(private http: HttpClient) { }
 
   getUsers(){
     return this.http.get<any>(this.baseUrl);
   }
+
+  getUserList():Observable<any[]> {
+    return this.http.get<any>(this.usersAPIUrl+ '/User/getallusers');
+  }
+
   getCardsInfo(id:number){
     return this.http.get<any[]>(this.baseUrl1+`${id}`)
   } 

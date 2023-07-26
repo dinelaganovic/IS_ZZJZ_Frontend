@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./verificationinstr.component.css']
 })
 export class VerificationinstrComponent implements OnInit {
+  
   public requests: any=[];
   constructor( private api: ApiService){}
   ngOnInit(): void {
