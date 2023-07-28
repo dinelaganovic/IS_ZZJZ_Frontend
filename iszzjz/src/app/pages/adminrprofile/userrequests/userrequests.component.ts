@@ -29,9 +29,36 @@ public createImgPath = (serverPath: string) => {
   return `https://localhost:7059/${serverPath}`; 
 }
 
+modalClose() {
+  this.activateSave= false;
+  this.api.getReguests()
+  .subscribe(res=>
+    {
+      this.requests=res;
+    })
+}
+delete(req:any) {
+  if(confirm(`Da li stvarno zelite da obrisete`)) {
+    this.api.deleteReq(req.id).subscribe(res => {
+      var closeModalBtn = document.getElementById('add-edit-modal-close');
+    if(closeModalBtn) {
+      closeModalBtn.click();
+    }
+
+    var showDeleteSuccess = document.getElementById('delete-success-alert');
+    if(showDeleteSuccess) {
+      showDeleteSuccess.style.display = "block";
+    }
+    setTimeout(function() {
+      if(showDeleteSuccess) {
+        showDeleteSuccess.style.display = "none"
+      }
+    }, 4000);
+    })
+  }
+}
 modalSave(item:any) {
   this.request = item;
   this.activateSave=true;
-
 }
 }

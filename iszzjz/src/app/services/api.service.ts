@@ -10,8 +10,9 @@ export class ApiService {
   private baseUrl1: string="https://localhost:7059/api/Cards/";
   private baseUrl2: string="https://localhost:7059/api/Upload/";
   private baseUrl3: string="https://localhost:7059/api/Requests";
+  private baseUrl4: string="https://localhost:7059/api/Requests";
   readonly usersAPIUrl="https://localhost:7059/api";
-
+  private cardsUrl1: string="https://localhost:7059/api/Cards/";
 
   constructor(private http: HttpClient) { }
 
@@ -33,7 +34,13 @@ export class ApiService {
   SaveR(userObj: any){
       return this.http.post<any>(`${this.baseUrl2}request`, userObj)
   }
+  postNCard(data:any) {
+    return this.http.post(this.cardsUrl1, data);
+  }
   getReguests(){
     return this.http.get<any>(this.baseUrl3);
+  }
+  deleteReq(id:number|string) {
+    return this.http.delete(this.baseUrl3 + `/${id}`);
   }
 }

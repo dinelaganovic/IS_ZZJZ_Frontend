@@ -46,6 +46,7 @@ import { UploadComponent } from './pages/userprofile/upload/upload.component';
 import { VerificationinstrComponent } from './pages/adminrprofile/verificationinstr/verificationinstr.component';
 import { VerificationhcardsComponent } from './pages/adminrprofile/verificationhcards/verificationhcards.component';
 import { AddhcardsComponent } from './pages/adminrprofile/userrequests/addhcards/addhcards.component';
+import { VerhcComponent } from './pages/adminrprofile/verificationhcards/verhc/verhc.component';
 
 
 @NgModule({
@@ -84,7 +85,8 @@ import { AddhcardsComponent } from './pages/adminrprofile/userrequests/addhcards
     UploadComponent,
     VerificationinstrComponent,
     VerificationhcardsComponent,
-    AddhcardsComponent
+    AddhcardsComponent,
+    VerhcComponent
   
   ],
   imports: [

@@ -3,11 +3,11 @@ import { Observable } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-addhcards',
-  templateUrl: './addhcards.component.html',
-  styleUrls: ['./addhcards.component.css']
+  selector: 'app-verhc',
+  templateUrl: './verhc.component.html',
+  styleUrls: ['./verhc.component.css']
 })
-export class AddhcardsComponent {
+export class VerhcComponent {
 
   requests$!:Observable<any[]>;
   usersList$!:Observable<any[]>;
