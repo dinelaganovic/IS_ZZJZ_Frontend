@@ -10,7 +10,8 @@ export class ApiService {
   private baseUrl1: string="https://localhost:7059/api/Cards/";
   private baseUrl2: string="https://localhost:7059/api/Upload/";
   private baseUrl3: string="https://localhost:7059/api/Requests";
-  private baseUrl4: string="https://localhost:7059/api/Requests";
+  private baseUrl4: string="https://localhost:7059/api/Cards/getall";
+
   readonly usersAPIUrl="https://localhost:7059/api";
   private cardsUrl1: string="https://localhost:7059/api/Cards/";
 
@@ -42,5 +43,11 @@ export class ApiService {
   }
   deleteReq(id:number|string) {
     return this.http.delete(this.baseUrl3 + `/${id}`);
+  }
+  getCards(){
+    return this.http.get<any>(this.baseUrl4);
+  }
+  updateCards(id:number|string, data:any) {
+    return this.http.put(this.cardsUrl1 + `${id}`, data);
   }
 }

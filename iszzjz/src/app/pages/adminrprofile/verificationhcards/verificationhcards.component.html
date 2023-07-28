@@ -1,6 +1,6 @@
 <h4><i class="bi bi-credit-card"></i> Novi zahtevi za overu zdravstvene knjizice: </h4>
 <br>
-<div style="width: 60rem;" class="alert alert-success" role="alert" id="add-success-alert">
+<div class="alert alert-success" style="width: 60rem;" role="alert" id="update-success-alert">
   Zdravstvena knjizica je uspesno overena!
 </div>
 
@@ -34,7 +34,7 @@
         <button type="button" (click)="modalClose()" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="add-edit-modal-close"></button>
       </div>
       <div class="modal-body">
-        <app-verhc [requests]="request"  *ngIf="activateSave"></app-verhc>      
+        <app-verhc [requests]="request"  *ngIf="activateSave"></app-verhc>
       </div>    
     </div>
   </div>
