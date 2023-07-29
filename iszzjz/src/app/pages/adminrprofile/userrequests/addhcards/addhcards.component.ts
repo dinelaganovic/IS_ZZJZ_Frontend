@@ -30,7 +30,7 @@ constructor( private api: ApiService){}
     var healthcards = {
       date_verification_hc:this.date_verification_hc,
       date_expiration_hc:this.date_expiration_hc,
-      id_user:this.id_user
+      user_id:this.id_user
     }
 
     this.api.postNCard(healthcards).subscribe(res => {

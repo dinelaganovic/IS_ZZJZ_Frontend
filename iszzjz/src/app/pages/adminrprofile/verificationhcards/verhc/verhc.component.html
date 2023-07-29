@@ -1,7 +1,7 @@
 <div>
-    <input type="text" name="userid" [(ngModel)]="id_user" id="userid" hidden>
+    <input type="text" name="userid" [(ngModel)]="user_id" id="userid" hidden>
     <div *ngFor="let cd of healthcards$|async" class="mb-3">
-    <div *ngIf="cd.id_user==id_user">
+    <div *ngIf="cd.user_id==user_id">
       <label for="datex" class="form-label"> Datum isteka knjizice: </label>
       <p>{{cd.date_verification_hc}}</p>
     <div class="mb-3">

@@ -19,12 +19,12 @@ constructor( private api: ApiService, @Inject(DOCUMENT) document: Document){}
 
   @Input() requests:any;
   @Input() healthcards:any;
-  id_user:number;
+  user_id:number;
   date_verification_hc:string = "";
   date_expiration_hc:string = "";
 
   ngOnInit(): void {
-    this.id_user = this.requests.userid;
+    this.user_id = this.requests.userid;
     this.requests$! = this.api.getReguests();
     this.healthcards$! = this.api.getCards();
   }
@@ -33,7 +33,7 @@ constructor( private api: ApiService, @Inject(DOCUMENT) document: Document){}
     var cards = {
       date_verification_hc:this.date_verification_hc,
       date_expiration_hc:this.date_expiration_hc,
-      id_user:this.id_user,
+      user_id:this.user_id,
     }
     this.api.updateCards(p,cards).subscribe(res => {
       var closeModalBtn = document.getElementById('add-edit-modal-close');
