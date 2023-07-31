@@ -22,6 +22,7 @@ import { HealthcardsComponent } from './pages/userprofile/healthcards/healthcard
 import { AdminisworkerComponent } from './pages/adminprofile/adminisworker/adminisworker.component';
 import { VerificationhcardsComponent } from './pages/adminrprofile/verificationhcards/verificationhcards.component';
 import { VerificationinstrComponent } from './pages/adminrprofile/verificationinstr/verificationinstr.component';
+import { MyguidanceComponent } from './pages/userprofile/myguidance/myguidance.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -46,8 +47,8 @@ const routes: Routes = [
   ]},
   {path:'userprofile', component: UserhomeComponent,canActivate: [AuthGuard], children:[
     { path:'requestspage', component: RequestspageComponent },
-    {path: 'healthcards', component: HealthcardsComponent}
-
+    {path: 'healthcards', component: HealthcardsComponent},
+    {path: 'myguidance', component: MyguidanceComponent}
   ]
 }
 ];

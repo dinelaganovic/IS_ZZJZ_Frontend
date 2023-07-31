@@ -15,7 +15,7 @@ export class ApiService {
   readonly usersAPIUrl="https://localhost:7059/api";
   private cardsUrl1: string="https://localhost:7059/api/Cards/";
   private baseUrl6: string="https://localhost:7059/api/Guidances/savenewg";
-
+  private baseUrl7: string="https://localhost:7059/api/Guidances/";
 
   constructor(private http: HttpClient) { }
 
@@ -58,5 +58,9 @@ export class ApiService {
   }
   postUput(data:any) {
     return this.http.post(this.baseUrl6, data);
+  }
+  getUList(id:number):Observable<any[]> {
+
+    return this.http.get<any>(this.baseUrl7+`${id}`);
   }
 }

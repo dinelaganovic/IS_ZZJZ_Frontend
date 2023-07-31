@@ -9,5 +9,10 @@ export const navbarData = [
         icon: 'bi bi-wallet2',
         label: 'Moja zdravstvena knjižica'
     },
+    {
+        routeLink: 'myguidance',
+        icon: 'bi bi-card-checklist',
+        label: 'Moji uputi'
+    },
    
 ];
