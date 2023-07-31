@@ -12,7 +12,7 @@
 <div *ngIf="req.type_id=='3'"  class="card" style="width: 60rem;background-color: rgb(161, 189, 195);margin-bottom: 2rem;">
   <img class="card-img-top" [src]="createImgPath(req.document)" alt="documenttt">
   <div class="card-body">
-    <h5 class="card-title">Document</h5>
+    <h5 class="card-title">Dokument</h5>
     <div *ngFor="let ur of usersList$|async" style="margin-bottom: 10px;">
     <p *ngIf="req.userid==ur.id" class="card-text">{{ur.firstName}} {{ur.lastName}}</p>
     </div>
