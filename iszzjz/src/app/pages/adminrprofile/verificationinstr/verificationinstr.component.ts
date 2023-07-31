@@ -14,7 +14,7 @@ export class VerificationinstrComponent implements OnInit {
   usersList$!:Observable<any[]>;
   activateSave:boolean = false;
   request: any=[];
-  
+
   constructor( private api: ApiService){}
 
   ngOnInit(): void {

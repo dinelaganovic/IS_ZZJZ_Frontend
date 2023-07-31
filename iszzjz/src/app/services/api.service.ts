@@ -11,9 +11,11 @@ export class ApiService {
   private baseUrl2: string="https://localhost:7059/api/Upload/";
   private baseUrl3: string="https://localhost:7059/api/Requests";
   private baseUrl4: string="https://localhost:7059/api/Cards/getall";
-
+  private baseUrl5: string="https://localhost:7059/api/TravelExpense/getall";
   readonly usersAPIUrl="https://localhost:7059/api";
   private cardsUrl1: string="https://localhost:7059/api/Cards/";
+  private baseUrl6: string="https://localhost:7059/api/Guidances/savenewg";
+
 
   constructor(private http: HttpClient) { }
 
@@ -49,5 +51,12 @@ export class ApiService {
   }
   updateCards(id:number|string, data:any) {
     return this.http.put(this.cardsUrl1 + `${id}`, data);
+  }
+  getTEList():Observable<any[]> {
+
+    return this.http.get<any>(this.baseUrl5);
+  }
+  postUput(data:any) {
+    return this.http.post(this.baseUrl6, data);
   }
 }

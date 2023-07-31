@@ -47,6 +47,7 @@ import { VerificationinstrComponent } from './pages/adminrprofile/verificationin
 import { VerificationhcardsComponent } from './pages/adminrprofile/verificationhcards/verificationhcards.component';
 import { AddhcardsComponent } from './pages/adminrprofile/userrequests/addhcards/addhcards.component';
 import { VerhcComponent } from './pages/adminrprofile/verificationhcards/verhc/verhc.component';
+import { AddguidanceComponent } from './pages/adminrprofile/verificationinstr/addguidance/addguidance.component';
 
 
 @NgModule({
@@ -86,7 +87,8 @@ import { VerhcComponent } from './pages/adminrprofile/verificationhcards/verhc/v
     VerificationinstrComponent,
     VerificationhcardsComponent,
     AddhcardsComponent,
-    VerhcComponent
+    VerhcComponent,
+    AddguidanceComponent
   
   ],
   imports: [
