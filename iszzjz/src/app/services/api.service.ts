@@ -56,6 +56,10 @@ export class ApiService {
 
     return this.http.get<any>(this.baseUrl5);
   }
+  getUpList():Observable<any[]> {
+
+    return this.http.get<any>(this.baseUrl7+ 'getall');
+  }
   postUput(data:any) {
     return this.http.post(this.baseUrl6, data);
   }
